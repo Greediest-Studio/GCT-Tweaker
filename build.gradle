@@ -113,6 +113,12 @@ dependencies {
         testImplementation 'org.junit.jupiter:junit-jupiter:6.0.3'
         testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     }
+
+    modRuntimeOnly "curse.maven:bookshelf-228525:2836960"
+    modCompileOnly "curse.maven:crafttweaker-239197:6669824"
+    modRuntimeOnly "curse.maven:crafttweaker-239197:6669824"
+    modCompileOnly "curse.maven:gamestage-268655:2951840"
+    modRuntimeOnly "curse.maven:gamestage-268655:2951840"
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'
@@ -179,7 +185,7 @@ if (!propertyBool('enable_shadow')) {
 }
 
 compileJava {
-    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_25
 }
 
 jar {
@@ -230,7 +236,7 @@ tasks.named(remapTaskName).configure {
 }
 
 compileTestJava {
-    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_25
 }
 
 test {
