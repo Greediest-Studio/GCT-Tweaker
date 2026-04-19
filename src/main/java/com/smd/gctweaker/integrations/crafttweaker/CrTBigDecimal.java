@@ -32,43 +32,43 @@ public final class CrTBigDecimal {
     }
 
     @ZenMethod
-    public static int roundUp() {
-        return BigDecimal.ROUND_UP;
+    public static RoundingMode roundUp() {
+        return RoundingMode.UP;
     }
 
     @ZenMethod
-    public static int roundDown() {
-        return BigDecimal.ROUND_DOWN;
+    public static RoundingMode roundDown() {
+        return RoundingMode.DOWN;
     }
 
     @ZenMethod
-    public static int roundCeiling() {
-        return BigDecimal.ROUND_CEILING;
+    public static RoundingMode roundCeiling() {
+        return RoundingMode.CEILING;
     }
 
     @ZenMethod
-    public static int roundFloor() {
-        return BigDecimal.ROUND_FLOOR;
+    public static RoundingMode roundFloor() {
+        return RoundingMode.FLOOR;
     }
 
     @ZenMethod
-    public static int roundHalfUp() {
-        return BigDecimal.ROUND_HALF_UP;
+    public static RoundingMode roundHalfUp() {
+        return RoundingMode.HALF_UP;
     }
 
     @ZenMethod
-    public static int roundHalfDown() {
-        return BigDecimal.ROUND_HALF_DOWN;
+    public static RoundingMode roundHalfDown() {
+        return RoundingMode.HALF_DOWN;
     }
 
     @ZenMethod
-    public static int roundHalfEven() {
-        return BigDecimal.ROUND_HALF_EVEN;
+    public static RoundingMode roundHalfEven() {
+        return RoundingMode.HALF_EVEN;
     }
 
     @ZenMethod
-    public static int roundUnnecessary() {
-        return BigDecimal.ROUND_UNNECESSARY;
+    public static RoundingMode roundUnnecessary() {
+        return RoundingMode.UNNECESSARY;
     }
 
     @ZenMethod
@@ -197,28 +197,13 @@ public final class CrTBigDecimal {
     }
 
     @ZenMethod
-    public static BigDecimal divide(BigDecimal value, BigDecimal divisor, int scale, int roundingMode) {
-        return value.divide(divisor, scale, roundingMode);
-    }
-
-    @ZenMethod
     public static BigDecimal divide(BigDecimal value, BigDecimal divisor, int scale, RoundingMode roundingMode) {
         return value.divide(divisor, scale, roundingMode);
     }
 
     @ZenMethod
-    public static BigDecimal divide(BigDecimal value, BigDecimal divisor, int roundingMode) {
-        return value.divide(divisor, roundingMode);
-    }
-
-    @ZenMethod
     public static BigDecimal divide(BigDecimal value, BigDecimal divisor, RoundingMode roundingMode) {
         return value.divide(divisor, roundingMode);
-    }
-
-    @ZenMethod
-    public static BigDecimal divide(BigDecimal value, BigDecimal divisor) {
-        return value.divide(divisor);
     }
 
     @ZenMethod
@@ -324,16 +309,6 @@ public final class CrTBigDecimal {
     @ZenMethod
     public static BigDecimal setScale(BigDecimal value, int newScale, RoundingMode roundingMode) {
         return value.setScale(newScale, roundingMode);
-    }
-
-    @ZenMethod
-    public static BigDecimal setScale(BigDecimal value, int newScale, int roundingMode) {
-        return value.setScale(newScale, roundingMode);
-    }
-
-    @ZenMethod
-    public static BigDecimal setScale(BigDecimal value, int newScale) {
-        return value.setScale(newScale);
     }
 
     @ZenMethod
