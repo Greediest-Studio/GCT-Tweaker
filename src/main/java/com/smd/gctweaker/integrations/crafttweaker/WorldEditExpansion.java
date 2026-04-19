@@ -40,7 +40,7 @@ public class WorldEditExpansion {
             for (int z = minZ; z <= maxZ; z++) {
                 for (int x = minX; x <= maxX; x++) {
                     IBlock block = iWorld.getBlock(x, y, z);
-                    if (!ToolUtils.isValidBlock(block)) continue;
+                    if (ToolUtils.isValidBlock(block)) continue;
                     blocks.add(block);
                 }
             }
@@ -79,7 +79,7 @@ public class WorldEditExpansion {
 
                 for (int x = startX; x <= endX; x++) {
                     IBlock block = iWorld.getBlock(x, y, z);
-                    if (!ToolUtils.isValidBlock(block)) continue;
+                    if (ToolUtils.isValidBlock(block)) continue;
                     blocks.add(block);
                 }
             }
