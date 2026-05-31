@@ -115,7 +115,7 @@ public class CrToreOutput {
         Map<String, List<CrToreOutput>> upgradeMap = oreMap.get(dimKey);
 
         if (upgradeMap == null) {
-            if (test) {
+            if (test != null && test) {
                 CraftTweakerAPI.getLogger().logInfo("该维度无矿物: " + dimId);
             }
             return new IItemStack[0];
@@ -123,7 +123,7 @@ public class CrToreOutput {
 
         List<CrToreOutput> oreOutputs = upgradeMap.get(upgrade);
         if (oreOutputs == null || oreOutputs.isEmpty()) {
-            if (test) {
+            if (test != null && test) {
                 CraftTweakerAPI.getLogger().logInfo("该等级无矿物，维度: " + dimId + "，等级: " + upgrade);
             }
             return new IItemStack[0];
