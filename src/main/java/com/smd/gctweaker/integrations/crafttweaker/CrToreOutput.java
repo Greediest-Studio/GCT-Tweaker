@@ -110,7 +110,7 @@ public class CrToreOutput {
     }
 
     @ZenMethod
-    public static IItemStack[] getOreOutputList(int dimId, String upgrade, int parallel, @Optional("false") Boolean test) {
+    public static IItemStack[] getOreOutputList(int dimId, String upgrade, int parallel, @Optional("1.0f") Float chance, @Optional("false") Boolean test) {
         String dimKey = String.valueOf(dimId);
         Map<String, List<CrToreOutput>> upgradeMap = oreMap.get(dimKey);
 
@@ -134,7 +134,7 @@ public class CrToreOutput {
         for (CrToreOutput oreOutput : oreOutputs) {
             int n = oreOutput.amount * parallel;
 
-            int x = test ? n : com.smd.gctweaker.util.BinomialRandomGenerator.generate(n, oreOutput.chance);
+            int x = test ? n : com.smd.gctweaker.util.BinomialRandomGenerator.generate(n, oreOutput.chance * (1.0f + chance));
 
             if (x > 0 && oreOutput.ore != null) {
                 IItemStack outputStack = oreOutput.ore.withAmount(x);
